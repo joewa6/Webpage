@@ -11,6 +11,9 @@ body {
     line-height: 1.6;
     background: #f4f4f4;
     color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body takes up at least 100% of the viewport height */
 }
 
 header {
@@ -50,6 +53,7 @@ main {
     margin: 0 auto;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* This allows the main content to expand and push the footer down */
 }
 
 section {
@@ -90,36 +94,5 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem 0;
-    position: relative;
-    bottom: 0;
     width: 100%;
-}
-
-/* Styles for the Posts Container */
-#posts-container {
-    margin-top: 2rem;
-}
-
-/* Styles for Each Post Article */
-article {
-    margin-bottom: 2rem;
-    padding: 1rem;
-    background: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-article h2 {
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-article .post-date {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 1rem;
-}
-
-article p {
-    margin-bottom: 1rem;
 }
