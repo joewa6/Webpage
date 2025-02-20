@@ -1,0 +1,91 @@
+/* Enhanced body styling */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Updated header styling */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 2rem;
+}
+/* LETS ADD SOME STYLING TO THE NAVIGATION - MAYBE SOME HOVER EFFECTS AND SHOW WHICH PAGE WE ARE ON */
+/* Updated navigation styling */
+nav ul li a {
+    text-decoration: none;
+    color: #222e3b;
+    font-weight: 600;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 0.5rem 1rem;      /* Add space inside the link */
+    border-radius: 8px;        /* Rounded corners for the grey box effect */
+}
+
+nav ul li a:hover {
+    color: #005bb5;
+    background-color: #e0e0e0; /* Light grey on hover */
+}
+
+/* Highlight current page link */
+nav ul li a.active {
+    background-color: #c0c0c0; /* A slightly darker grey for the active page */
+    color: #005bb5;
+}
+
+
+nav a {
+    text-decoration: none;
+    color: #222e3b;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #005bb5;
+}
+
+/* Hero section styling */
+#hero {
+    margin-top: 100px; /* Adjusted for fixed header */
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+#hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#hero p {
+    font-size: 1.25rem;
+    color: #555;
+}
+
+button, a {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #fff;
+    border-top: 1px solid #eaeaea;
+    margin-top: 2rem;
+}
