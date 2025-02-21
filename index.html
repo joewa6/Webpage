@@ -1,54 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe Wallace - Blog</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            margin: 0;
-        }
-        main {
-            flex: 1;
-        }
-        footer {
-            text-align: center;
-            padding: 1em 0;
-            background-color: #f1f1f1;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-container">
-          <h1>Joe Wallace</h1>
-            <h2>Computational Chemistry & Data Science</h2>
-          <nav>
-            <ul>
-              <li><a href="index.html" class="active">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="cv.html">CV</a></li>
-              <li><a href="research.html">Research</a></li>
-              <li><a href="blog/index.html">Blog</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-    
-    <main>
-        <section id="hero">
-            <h1>Welcome to My World</h1>
-            <p>Discover my work, my research, and my projects.</p>
-        </section>
-        <!-- Additional sections as needed -->
-    </main>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joe Wallace - Computational Chemistry & Data Science</title>
 
-    <footer>
-        <p>&copy; 2025 Joe Wallace</p>
-    </footer>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Internal styles specific to this page; you can move these into style.css if preferred -->
+  <style>
+    /* Basic Reset & Layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 0;
+    }
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Logo / Name */
+    .header-container h1 {
+      margin: 0;
+    }
+    .header-container h2 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5em;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #444;
+    }
+
+    main {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      padding-top: 6em;
+      margin: 0 auto;
+    }
+    /* Hero Section */
+    #hero {
+      background-color: #fff;
+      padding: 3em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #hero h1 {
+      margin-bottom: 0.5em;
+      font-size: 2rem;
+    }
+    #hero p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Additional Sections (Placeholders) */
+    .content-section {
+      margin-top: 2em;
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      margin-bottom: 1em;
+      color: #333;
+    }
+    .content-section p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      background-color: #f1f1f1;
+    }
+    footer p {
+      margin: 0;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div>
+        <h1>Joe Wallace</h1>
+        <h2>Computational Chemistry &amp; Data Science</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <!-- Hero / Intro Section -->
+    <section id="hero">
+      <h1>Welcome to My World</h1>
+      <p>
+        Discover my work, my research, and the projects I'm pursuing at
+        the intersection of machine learning and computational chemistry.
+      </p>
+    </section>
+
+    <!-- Example: Featured Projects Section -->
+    <section class="content-section" id="featured-projects">
+      <h2>Featured Projects</h2>
+      <p>
+        Here you can highlight your most exciting AI-driven drug discovery
+        or data science projects. For example:
+      </p>
+      <ul>
+        <li><strong>AI for Small Molecule Drug Discovery:</strong> Using GNNs to predict binding affinities.</li>
+        <li><strong>AI for Peptide &amp; Biologics Design:</strong> Generating novel peptide therapeutics using ProteinMPNN.</li>
+        <li><strong>ML for Multi-Omics Target Discovery:</strong> Identifying novel targets from omics data.</li>
+      </ul>
+      <p>
+        Include links to GitHub repos, or a dedicated research page for
+        more details.
+      </p>
+    </section>
+
+    <!-- Example: Latest Blog Posts or Updates -->
+    <section class="content-section" id="latest-updates">
+      <h2>Latest Blog Posts</h2>
+      <p>
+        Keep your readers up-to-date with your newest articles on
+        AI-driven drug discovery, molecular modeling, or your personal
+        journey in computational science.
+      </p>
+      <p>
+        You could dynamically pull blog previews here—just like on the
+        blog page—so your homepage always reflects your newest content.
+      </p>
+    </section>
+
+    <!-- Additional sections as needed -->
+    <!-- e.g., "About Me" preview, "Contact Me" button/form, etc. -->
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>&copy; 2025 Joe Wallace. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joe Wallace - Computational Chemistry & Data Science</title>
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Internal styles specific to this page; you can move these into style.css if preferred -->
+  <style>
+    /* Basic Reset & Layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 0;
+    }
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Logo / Name */
+    .header-container h1 {
+      margin: 0;
+    }
+    .header-container h2 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5em;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #444;
+    }
+
+    main {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      padding-top: 6em;
+      margin: 0 auto;
+    }
+    /* Hero Section */
+    #hero {
+      background-color: #fff;
+      padding: 3em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    #hero h1 {
+      margin-bottom: 0.5em;
+      font-size: 2rem;
+    }
+    #hero p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    /* Additional Sections (Placeholders) */
+    .content-section {
+      margin-top: 2em;
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      margin-bottom: 1em;
+      color: #333;
+    }
+    .content-section p {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      background-color: #f1f1f1;
+    }
+    footer p {
+      margin: 0;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div>
+        <h1>Joe Wallace</h1>
+        <h2>Computational Chemistry &amp; Data Science</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html" >Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cv.html" class="active">CV</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <section class="content-section">
+      <h2>Curriculum Vitae</h2>
+      <p>
+        Below is my most up-to-date CV. You can read it on-screen
+        or download a PDF version if you prefer to print or save it locally.
+      </p>
+      <h3>Personal Details</h3>
+      <p>
+        <strong>Name:</strong> Joe Wallace<br/>
+        <strong>Email:</strong> your_email@example.com<br/>
+        <strong>Location:</strong> Genova, Italy (willing to relocate / remote)
+      </p>
+
+      <h3>Education</h3>
+      <ul>
+        <li><strong>PhD in Computational Biochemistry</strong>  
+            <br/>University of Liverpool, A*STAR (Singapore), Paris Sorbonne Nord  
+            <br/><em>Split-site program focusing on drug discovery and protein-ligand modeling</em>
+        </li>
+        <li><strong>BSc in Biochemistry</strong>  
+            <br/>University of Liverpool
+        </li>
+      </ul>
+
+      <h3>Current Position</h3>
+      <ul>
+        <li><strong>Postdoctoral Researcher</strong>  
+            <br/>Marco De Vivo Group, IIT Genova  
+            <br/>Focused on molecular simulations of nanoparticles, applying ML-based approaches to analyze large simulation datasets.
+        </li>
+      </ul>
+
+      <h3>Key Skills</h3>
+      <ul>
+        <li>Machine Learning &amp; AI (PyTorch, TensorFlow, DeepChem)</li>
+        <li>Molecular Dynamics (GROMACS, AMBER, NAMD)</li>
+        <li>Cheminformatics (RDKit, Open Babel)</li>
+        <li>Bioinformatics &amp; Data Analysis (Python, R, Pandas)</li>
+        <li>Docking &amp; Protein Design (AutoDock Vina, AlphaFold, ProteinMPNN)</li>
+      </ul>
+
+      <h3>Selected Publications</h3>
+      <ul>
+        <li>Wallace, J. et al. (2023). <em>Nanoparticle-ligand interactions</em>. Journal of Molecular Modeling.</li>
+        <li>Wallace, J. et al. (2022). <em>Computational approaches in drug discovery</em>. Bioinformatics Journal.</li>
+      </ul>
+
+      <h3>Awards &amp; Achievements</h3>
+      <ul>
+        <li>Awarded “Best Thesis” in 2021 by [Institution/Organization].</li>
+        <li>Speaker at [Conference Name] on ML-driven Protein-Ligand Modeling.</li>
+      </ul>
+
+      <p>
+        <em>References available upon request.</em>
+      </p>
+
+      <!-- Update this link to your actual PDF path -->
+      <a class="download-cv-btn" href="assets/docs/cv.pdf" target="_blank">
+        Download CV (PDF)
+      </a>
+    </section>
+
+    <!-- The main CV content -->
+    <section class="content-section">
+      
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>&copy; 2025 Joe Wallace. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>

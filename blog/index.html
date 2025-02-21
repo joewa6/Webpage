@@ -1,152 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog - AI Drug Discovery</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #333;
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-        header nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        header nav ul li {
-            display: inline;
-        }
-        header nav ul li a {
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
-        main {
-            flex: 1;
-            padding: 20px;
-            margin-top: 80px; /* Push content down to avoid overlap */
-            max-width: 9200px;
-            margin-left: 20px;
-            margin-right: 0px;
-        }
-        .container {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .blog-list {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-        .blog-card {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            transition: transform 0.2s;
-        }
-        .blog-card:hover {
-            transform: scale(1.02);
-        }
-        .read-more {
-            text-decoration: none;
-            color: #007BFF;
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-        footer {
-            background-color: #222;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-            width: 100%;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog - Joe Wallace</title>
+
+  <link rel="stylesheet" href="../assets/css/style.css"/>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* Overarching layout (like your other pages) */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    /* Header style consistent with the rest of the site */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 0;
+      position: relative; /* helps if margin collapse or layering issues occur */
+      z-index: 2;         /* ensures the header is on top */
+    }
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .header-container h1, .header-container h2 {
+      margin: 0;
+    }
+    .header-container h2 {
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5em;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #444;
+    }
+
+    /* Main content: extra big padding-top so we can see it for sure */
+    main {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      /* Try a LARGE padding-top temporarily to confirm it’s working, then reduce as desired */
+      padding-top: 8em;  
+      margin: 0 auto;
+      position: relative; /* ensure no overlap from absolutely positioned elements */
+      z-index: 1;
+      background-color: #fafafa; /* optional color to help visualize spacing */
+    }
+
+    /* The blog-list container (cards, etc.) */
+    .blog-list {
+      /* style is also in blog/style.css, but we can place general layout rules here if needed */
+      margin-bottom: 2em;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      background-color: #f1f1f1;
+      color: #666;
+    }
+  </style>
 </head>
+
 <body>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <div>
+        <h1>Joe Wallace</h1>
+        <h2>Computational Chemistry &amp; Data Science</h2>
+      </div>
+      <nav>
+        <ul>
+          <!-- Use relative paths to go up one directory for the main site pages -->
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../about.html">About</a></li>
+          <li><a href="../cv.html">CV</a></li>
+          <li><a href="../research.html">Research</a></li>
+          <!-- Blog is the active link here -->
+          <li><a href="index.html" class="active">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../cv.html">CV</a></li>
-                <li><a href="../research.html">Research</a></li>
-                <li><a href="index.html" class="active">Blog</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- MAIN CONTENT -->
+  <main>
+    <div id="blog-list" class="blog-list">
+      <!-- The blog posts fetched by JavaScript will appear here -->
+    </div>
+  </main>
 
-    <main>
-        <div class="container">
-            <h1>AI Drug Discovery Blog</h1>
-            <div id="blog-list" class="blog-list"></div>
-        </div>
-    </main>
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 Joe Wallace. All Rights Reserved.</p>
+  </footer>
 
-    <footer>
-        <p>&copy; 2025 Your Name</p>
-    </footer>
+  <!-- SCRIPTS -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const blogList = document.getElementById("blog-list");
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const blogList = document.getElementById("blog-list");
-
-            // Fetch blog posts dynamically from JSON
-            fetch("./posts/posts.json")
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error("Network response was not OK");
-                    }
-                    return response.json();
-                })
-                .then(posts => {
-                    if (!posts.length) {
-                        blogList.innerHTML = "<p>No blog posts available.</p>";
-                    }
-                    posts.forEach(post => {
-                        const postCard = document.createElement("div");
-                        postCard.className = "blog-card";
-                        postCard.innerHTML = `
-                            <h2>${post.title}</h2>
-                            <p>${post.description}</p>
-                            <a href="posts/${post.filename}" class="read-more">Read More</a>
-                        `;
-                        blogList.appendChild(postCard);
-                    });
-                })
-                .catch(error => {
-                    console.error("Error loading blog posts:", error);
-                    blogList.innerHTML = "<p>Error loading blog posts. Please try again later.</p>";
-                });
+      // Fetch blog posts from JSON
+      fetch("./posts/posts.json")
+        .then(response => {
+          if (!response.ok) {
+            throw new Error("Network response was not OK");
+          }
+          return response.json();
+        })
+        .then(posts => {
+          if (!posts.length) {
+            blogList.innerHTML = "<p>No blog posts available.</p>";
+            return;
+          }
+          posts.forEach(post => {
+            const postCard = document.createElement("div");
+            postCard.className = "blog-card";
+            postCard.innerHTML = `
+              <h2>${post.title}</h2>
+              <p>${post.description}</p>
+              <a href="posts/${post.filename}" class="read-more">Read More</a>
+            `;
+            blogList.appendChild(postCard);
+          });
+        })
+        .catch(error => {
+          console.error("Error loading blog posts:", error);
+          blogList.innerHTML = "<p>Error loading blog posts. Please try again later.</p>";
         });
-    </script>
-
+    });
+  </script>
 </body>
 </html>
+

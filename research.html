@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joe Wallace - Computational Chemistry & Data Science</title>
+
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+
+  <!-- Internal styles specific to this page (can be moved to style.css if preferred) -->
+  <style>
+    /* Basic Reset & Layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 1em 0;  /* Or 2em if you prefer more header height */
+    }
+    .header-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    /* Logo / Name */
+    .header-container h1 {
+      margin: 0;
+    }
+    .header-container h2 {
+      margin: 0;
+      font-weight: 400;
+      font-size: 1.2rem;
+    }
+
+    /* Navigation */
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1em;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 0.5em;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    nav ul li a:hover,
+    nav ul li a.active {
+      background-color: #444;
+    }
+
+    /* Main content area:
+       - Padding at the top so the content doesn't run under the header
+       - 90% width for layout, centered with auto margins
+    */
+    main {
+      flex: 1;
+      width: 90%;
+      max-width: 1200px;
+      padding-top: 6em;  /* same as other pages */
+      margin: 0 auto;    /* centers horizontally */
+    }
+
+    /* Content sections */
+    .content-section {
+      margin-top: 2em;
+      background-color: #fff;
+      padding: 2em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .content-section h2 {
+      margin-bottom: 1em;
+      color: #333;
+    }
+    .content-section p,
+    .content-section li {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1em 0;
+      background-color: #f1f1f1;
+    }
+    footer p {
+      margin: 0;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- ========== HEADER ========== -->
+  <header>
+    <div class="header-container">
+      <div>
+        <h1>Joe Wallace</h1>
+        <h2>Computational Chemistry &amp; Data Science</h2>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main>
+    <!-- ===== Research Overview ===== -->
+    <section class="content-section">
+      <h2>My Research</h2>
+      <p>
+        My work focuses on the intersection of computational chemistry,
+        molecular modeling, and machine learning to accelerate drug discovery.
+        By combining molecular simulations with advanced AI-driven tools,
+        I aim to better understand protein-ligand interactions, nanoparticle
+        behavior, and the broader biological systems relevant to
+        therapeutic development.
+      </p>
+    </section>
+
+    <!-- ===== Project 1: AI for Small Molecule Drug Discovery ===== -->
+    <section class="content-section">
+      <h2>AI for Small Molecule Drug Discovery</h2>
+      <p>
+        Exploring how AI, especially Graph Neural Networks (GNNs),
+        can predict drug-protein binding affinities for small molecules.
+        My workflow involves:
+      </p>
+      <ul>
+        <li>Preprocessing molecular data with RDKit &amp; DeepChem</li>
+        <li>Running docking simulations (AutoDock Vina) &amp; MD for validation</li>
+        <li>Training GNN models to predict binding affinity &amp; ADMET profiles</li>
+        <li>Iterative refinement &amp; lead optimization</li>
+      </ul>
+      <p>
+        Check my <a href="blog/index.html">blog</a> for tutorials on how to set
+        up a small molecule AI pipeline, or see my <a href="cv.html">CV</a> for
+        publications &amp; code repositories.
+      </p>
+    </section>
+
+    <!-- ===== Project 2: AI for Peptide & Biologics Design ===== -->
+    <section class="content-section">
+      <h2>AI for Peptide &amp; Biologics Design</h2>
+      <p>
+        Working with peptides and biologics provides new avenues for
+        therapeutic innovation. My main goals include:
+      </p>
+      <ul>
+        <li>Using <strong>ProteinMPNN</strong> &amp; <strong>AlphaFold</strong> 
+            to generate novel peptide therapeutics
+        </li>
+        <li>Running molecular dynamics on candidate designs for
+            stability &amp; efficacy
+        </li>
+        <li>Leveraging <strong>DiffDock</strong> for protein-ligand &amp; 
+            peptide docking
+        </li>
+      </ul>
+      <p>
+        The synergy of AI-driven design and structural biology has
+        the potential to radically shorten discovery timelines
+        for modern biotherapeutics.
+      </p>
+    </section>
+
+    <!-- ===== Project 3: Multi-Omics for Drug Target Discovery ===== -->
+    <section class="content-section">
+      <h2>Multi-Omics for Drug Target Discovery</h2>
+      <p>
+        Biological data—from genomics, proteomics, transcriptomics, and more—can
+        reveal new therapeutic targets. I'm leveraging:
+      </p>
+      <ul>
+        <li><strong>Scanpy</strong> and <strong>Python data science libraries</strong> 
+            for single-cell analyses
+        </li>
+        <li>Machine learning (e.g., random forests, neural nets) to classify disease states</li>
+        <li>Integrating molecular modeling insights to identify which targets 
+            are druggable
+        </li>
+      </ul>
+      <p>
+        By bridging multi-omics data with structural insights, we can
+        pinpoint high-potential targets earlier in the pipeline.
+      </p>
+    </section>
+
+    <!-- ===== Project 4: Generative AI for De Novo Drug Design ===== -->
+    <section class="content-section">
+      <h2>Generative AI for De Novo Drug Design</h2>
+      <p>
+        I'm also exploring generative models (e.g., <strong>MolGAN</strong>,
+        <strong>ChemGPT</strong>) to create novel molecular structures with
+        optimized drug-like properties. Key areas include:
+      </p>
+      <ul>
+        <li>Reinforcement learning for property optimization</li>
+        <li>Assessing synthetic feasibility &amp; ADME/Tox predictions</li>
+        <li>Combining generative models with docking &amp; 
+            molecular dynamics feedback loops
+        </li>
+      </ul>
+      <p>
+        This approach aims to automate hypothesis generation and drastically
+        speed up the discovery cycle.
+      </p>
+    </section>
+
+    <!-- More sections or shuffle them as needed -->
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <p>&copy; 2025 Joe Wallace. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
+
