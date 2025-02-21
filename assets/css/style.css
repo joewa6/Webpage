@@ -87,6 +87,41 @@ button, a {
     transition: background-color 0.3s, color 0.3s;
 }
 
+/* 1) Mobile-friendly header & nav */
+@media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      align-items: flex-start; /* Or center, if you prefer */
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 0.5em;
+      margin-top: 1em; /* Space between logo/title and nav links */
+    }
+  }
+  
+  /* 2) Blog card responsiveness */
+  @media (max-width: 768px) {
+    .blog-card {
+      width: 100%;         /* Let cards fill the container width */
+      max-width: 500px;    /* Cap so they don't get too wide on tablets */
+      margin: 0 auto;      /* Center the card horizontally if narrower */
+    }
+  }
+  
+  /* 3) Optional: Blog list as a single column on phone screens, 
+        two columns on tablet, etc. */
+  @media (max-width: 576px) {
+    .blog-list {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+
+    
+    
 
 /* Footer styling */
 footer {
