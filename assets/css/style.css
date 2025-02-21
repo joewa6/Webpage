@@ -19,6 +19,13 @@ header {
     z-index: 100;
 }
 
+.header-container {
+    display: flex;
+    align-items: center;       /* Vertically centers items */
+    justify-content: space-between; /* Pushes the name and nav to opposite ends */
+    padding: 0 5rem;           /* Optional: Adjust side padding as needed */
+  }
+
 nav ul {
     display: flex;
     justify-content: center;

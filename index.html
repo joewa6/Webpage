@@ -3,12 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Personal Site</title>
+    <title>Joe Wallace - Blog</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+        }
+        main {
+            flex: 1;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #f1f1f1;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav>
+        <div class="header-container">
+          <h1>Joe Wallace</h1>
+            <h2>Computational Chemistry & Data Science</h2>
+          <nav>
             <ul>
               <li><a href="index.html" class="active">Home</a></li>
               <li><a href="about.html">About</a></li>
@@ -17,8 +36,8 @@
               <li><a href="blog/index.html">Blog</a></li>
             </ul>
           </nav>
-          
-    </header>
+        </div>
+      </header>
     
     <main>
         <section id="hero">
@@ -27,9 +46,9 @@
         </section>
         <!-- Additional sections as needed -->
     </main>
-    
+
     <footer>
-        <p>&copy; 2025 Your Name</p>
+        <p>&copy; 2025 Joe Wallace</p>
     </footer>
 </body>
 </html>

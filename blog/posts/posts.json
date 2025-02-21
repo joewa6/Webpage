@@ -1,0 +1,17 @@
+[
+    {
+        "filename": "1_FirstBlogPost.html",
+        "title": "AI-Driven Drug Discovery: A Data Science Journey",
+        "description": "Introduction to AI-driven drug discovery projects."
+    },
+    {
+        "filename": "2_post.html",
+        "title": "Next Post Title",
+        "description": "Description of the second post."
+    },
+    {
+        "filename": "3_another_post.html",
+        "title": "Another Blog Post",
+        "description": "More AI in drug discovery content."
+    }
+]
