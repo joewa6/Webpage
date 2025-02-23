@@ -5,13 +5,9 @@
         "description": "Introduction to AI-driven drug discovery projects."
     },
     {
-        "filename": "2_post.html",
-        "title": "Next Post Title",
-        "description": "Description of the second post."
-    },
-    {
-        "filename": "3_another_post.html",
-        "title": "Another Blog Post",
-        "description": "More AI in drug discovery content."
+        "filename": "2_Tutorial1.html",
+        "title": "Tutorial 1: How to Use AI in Drug Discovery",
+        "description": "Step-by-step guide to using AI in drug discovery."
     }
+
 ]

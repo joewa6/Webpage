@@ -23,7 +23,7 @@
     header {
       background-color: #333;
       color: #fff;
-      padding: 1em 0;  /* Or 2em if you prefer more header height */
+      padding: 1em 0;  
     }
     .header-container {
       width: 90%;
@@ -67,16 +67,13 @@
       background-color: #444;
     }
 
-    /* Main content area:
-       - Padding at the top so the content doesn't run under the header
-       - 90% width for layout, centered with auto margins
-    */
+    /* Main content area */
     main {
       flex: 1;
       width: 90%;
       max-width: 1200px;
-      padding-top: 6em;  /* same as other pages */
-      margin: 0 auto;    /* centers horizontally */
+      padding-top: 6em;  
+      margin: 0 auto;    
     }
 
     /* Content sections */
@@ -132,16 +129,67 @@
 
   <!-- ========== MAIN CONTENT ========== -->
   <main>
-    <!-- ===== Research Overview ===== -->
+  <!-- ===== Academic Research ===== -->
+  <section class="content-section">
+    <h2>Academic Research</h2>
+    <p>
+      My formal research background spans advanced computational methods
+      and experimental validation in nanoparticle systems, bridging data
+      science with molecular modeling to drive innovation in pharmaceutical
+      and biotech applications.
+    </p>
+    <ul>
+      <li>
+        <hr>
+        <strong>Post-Doctoral Research (De Vivo Lab, IIT Genova / Mancin Lab, Padova)</strong>
+        <p>
+          My post-doctoral work centered on computational strategies for
+          nanoparticle functionalization in sensing applications. I employed
+          molecular dynamics (MD) simulations, enhanced sampling (umbrella
+          sampling, steered MD), and machine learning (ridge regression, SVM,
+          random forest) to predict and optimize nanoparticle-ligand
+          interactions. This synergy of molecular modeling and data-driven
+          approaches provided robust insights into nanoparticle behavior,
+          paving the way for innovative applications in pharma, biotech, and
+          environmental cleanup (nanoplastics).
+        </p>
+        <strong>Key Skills:</strong> MD simulations, enhanced sampling (umbrella &amp; steered MD), 
+        machine learning (ridge regression, SVM, random forest), Python, data analysis, 
+        structural characterization, HPC workflows.
+      </li>
+      <hr>
+
+      <li>
+        <strong>PhD Research (University of Liverpool, A*STAR Singapore, &amp; Paris Sorbonne Nord)</strong>
+        <p>
+          During my PhD, I investigated peptide-capped gold nanoparticles through
+          an interdisciplinary mix of experimental and computational methods.
+          Techniques such as FTIR, UV/Vis, circular dichroism, and protein
+          expression were combined with MD simulations in GROMACS, Python-based
+          modeling, and advanced sampling (umbrella sampling, REMD,
+          metadynamics). This work refined my expertise in structural
+          characterization, molecular modeling, and data science—expertise I’m
+          now applying to drug discovery and cheminformatics projects in the
+          biotech sector.
+        </p>
+        <strong>Key Skills:</strong> Experimental characterization (FTIR, UV/Vis, CD, crystallography), 
+        protein expression, GROMACS, Python scripting, enhanced sampling (umbrella, REMD, 
+        metadynamics), data science workflows.
+      </li>
+      <hr>
+    </ul>
+  </section>
+
+
+    <!-- ===== Personal (Side) Projects ===== -->
     <section class="content-section">
-      <h2>My Research</h2>
+      <h2>Personal AI-Driven Projects</h2>
       <p>
-        My work focuses on the intersection of computational chemistry,
-        molecular modeling, and machine learning to accelerate drug discovery.
-        By combining molecular simulations with advanced AI-driven tools,
-        I aim to better understand protein-ligand interactions, nanoparticle
-        behavior, and the broader biological systems relevant to
-        therapeutic development.
+        In parallel to my formal research, I’ve been exploring various AI/ML 
+        applications in computational chemistry, drug discovery, and
+        biologics design. These projects are personal initiatives, aimed
+        at expanding my skill set and staying at the forefront of
+        data-driven methodologies in the biotech space.
       </p>
     </section>
 
@@ -149,20 +197,22 @@
     <section class="content-section">
       <h2>AI for Small Molecule Drug Discovery</h2>
       <p>
-        Exploring how AI, especially Graph Neural Networks (GNNs),
-        can predict drug-protein binding affinities for small molecules.
-        My workflow involves:
+        In this personal project, I explore how AI, especially Graph Neural
+        Networks (GNNs), can predict drug-protein binding affinities
+        for small molecules. My workflow involves:
       </p>
       <ul>
-        <li>Preprocessing molecular data with RDKit &amp; DeepChem</li>
-        <li>Running docking simulations (AutoDock Vina) &amp; MD for validation</li>
+        <li>Preprocessing molecular data with <em>RDKit</em> &amp; <em>DeepChem</em></li>
+        <li>Running docking simulations (<em>AutoDock Vina</em>) &amp; 
+            MD for validation
+        </li>
         <li>Training GNN models to predict binding affinity &amp; ADMET profiles</li>
         <li>Iterative refinement &amp; lead optimization</li>
       </ul>
       <p>
         Check my <a href="blog/index.html">blog</a> for tutorials on how to set
         up a small molecule AI pipeline, or see my <a href="cv.html">CV</a> for
-        publications &amp; code repositories.
+        publications &amp; code repositories (where available).
       </p>
     </section>
 
@@ -196,20 +246,20 @@
       <h2>Multi-Omics for Drug Target Discovery</h2>
       <p>
         Biological data—from genomics, proteomics, transcriptomics, and more—can
-        reveal new therapeutic targets. I'm leveraging:
+        reveal new therapeutic targets. In this project, I'm leveraging:
       </p>
       <ul>
-        <li><strong>Scanpy</strong> and <strong>Python data science libraries</strong> 
+        <li><strong>Scanpy</strong> and Python data science libraries 
             for single-cell analyses
         </li>
-        <li>Machine learning (e.g., random forests, neural nets) to classify disease states</li>
-        <li>Integrating molecular modeling insights to identify which targets 
-            are druggable
+        <li>Machine learning (random forests, neural networks) 
+            to classify disease states
         </li>
+        <li>Integrating molecular modeling insights to identify druggable targets</li>
       </ul>
       <p>
-        By bridging multi-omics data with structural insights, we can
-        pinpoint high-potential targets earlier in the pipeline.
+        By bridging multi-omics data with structural insights, I hope
+        to pinpoint high-potential targets earlier in the pipeline.
       </p>
     </section>
 
@@ -217,7 +267,7 @@
     <section class="content-section">
       <h2>Generative AI for De Novo Drug Design</h2>
       <p>
-        I'm also exploring generative models (e.g., <strong>MolGAN</strong>,
+        I’m also exploring generative models (e.g., <strong>MolGAN</strong>,
         <strong>ChemGPT</strong>) to create novel molecular structures with
         optimized drug-like properties. Key areas include:
       </p>
@@ -233,8 +283,6 @@
         speed up the discovery cycle.
       </p>
     </section>
-
-    <!-- More sections or shuffle them as needed -->
   </main>
 
   <!-- ========== FOOTER ========== -->
@@ -243,4 +291,3 @@
   </footer>
 </body>
 </html>
-

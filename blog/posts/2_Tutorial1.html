@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Computational Drug Discovery Tutorial</title>
+  <style>
+    /* Basic styling for clarity — customize as desired */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3, h4 {
+      margin-top: 1em;
+      margin-bottom: 0.5em;
+      color: #333;
+    }
+    pre {
+      background: #f8f8f8;
+      padding: 10px;
+      overflow-x: auto;
+      border-radius: 5px;
+    }
+    code {
+      font-family: "Courier New", Courier, monospace;
+    }
+    .note {
+      background: #ffffcc;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+    }
+    .placeholder {
+      color: #999;
+      font-style: italic;
+    }
+    .section {
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Title and Introduction -->
+  <header class="section">
+    <h1>Computational Drug Discovery Tutorial</h1>
+    <p>
+      <strong>Objective:</strong> This tutorial walks through the core steps 
+      of early-stage computational drug discovery — from preparing a protein 
+      target to performing basic docking, introducing machine learning for 
+      activity prediction, and outlining how to set up molecular dynamics.
+    </p>
+    <div class="note">
+      <strong>Note:</strong> All tools referenced are free or open-source 
+      (AutoDock Vina, RDKit, PyMOL (open-source build) or ChimeraX, etc.). 
+      You may need to install these in your environment prior to following along.
+    </div>
+  </header>
+
+  <!-- 1. Project Setup & Environment -->
+  <section class="section" id="project-setup">
+    <h2>1. Project Setup & Environment</h2>
+    <p>
+      Create a conda environment (or use a virtual environment of your choice) with 
+      the necessary libraries:
+    </p>
+    <pre><code>
+# Example using conda
+conda create -n drugdiscovery python=3.9
+conda activate drugdiscovery
+
+# Install libraries
+conda install -c conda-forge rdkit
+conda install -c conda-forge openbabel
+pip install deepchem
+pip install pyimolecule # optional, if you want additional visualization
+# ... and any other tools you need
+    </code></pre>
+    <p>
+      Alternatively, you can install and run everything on a Google Colab 
+      environment by including the necessary <code>!pip install</code> or 
+      <code>!apt-get</code> commands in a Colab cell.
+    </p>
+  </section>
+
+  <!-- 2. Gathering & Preparing the Protein Structure -->
+  <section class="section" id="protein-structure">
+    <h2>2. Gathering & Preparing the Protein Structure</h2>
+    <p>
+      In this step, we'll <strong>download</strong> the target protein structure 
+      from a public database (PDB or AlphaFold) and <strong>prepare</strong> it for 
+      docking or ML tasks.
+    </p>
+    <ol>
+      <li>
+        <strong>Download the PDB/AlphaFold file:</strong> 
+        <span class="placeholder">[Insert step-by-step instructions with screenshots or code for retrieval]</span>
+      </li>
+      <li>
+        <strong>Visual inspection:</strong> 
+        <span class="placeholder">[Example: Open in PyMOL or ChimeraX to identify missing residues, cofactors, etc.]</span>
+      </li>
+      <li>
+        <strong>Structure cleanup:</strong> 
+        <span class="placeholder">[Outline removing waters, adding hydrogens, dealing with partial occupancy, etc.]</span>
+      </li>
+    </ol>
+    <pre><code class="placeholder">
+# Placeholder for code snippet demonstrating
+# how to process or clean a PDB file, e.g.:
+# - Using PyMOL scripts or command line tools
+# - Using RDKit or Open Babel for minor fixes
+</code></pre>
+    <p><em>Tip:</em> Always confirm that your final processed structure matches 
+      the biological assembly if that’s relevant for binding.</p>
+  </section>
+
+  <!-- 3. Exploring Known Approved Drugs -->
+  <section class="section" id="known-drugs">
+    <h2>3. Exploring Known Approved Drugs</h2>
+    <p>
+      Since our target has <strong>existing approved drugs</strong>, let’s pull 
+      those structures from a public database (e.g., ChEMBL, DrugBank).
+    </p>
+    <ol>
+      <li>
+        <strong>Retrieve ligand data:</strong> 
+        <span class="placeholder">[Show how to get SMILES, 3D SDF, etc.]</span>
+      </li>
+      <li>
+        <strong>Convert & prepare:</strong> 
+        <span class="placeholder">[Use RDKit/Open Babel to generate 3D coordinates, protonate at pH ~7.4.]</span>
+      </li>
+      <li>
+        <strong>Visualize & validate:</strong> 
+        <span class="placeholder">[Check ligand structure in a viewer to confirm geometry, etc.]</span>
+      </li>
+    </ol>
+    <pre><code class="placeholder">
+# Example snippet for ligand preparation with RDKit
+from rdkit import Chem
+from rdkit.Chem import AllChem
+
+smiles = "C1=CC=CC=C1"  # placeholder SMILES for demonstration
+mol = Chem.MolFromSmiles(smiles)
+mol = Chem.AddHs(mol)
+AllChem.EmbedMolecule(mol, randomSeed=42)
+AllChem.UFFOptimizeMolecule(mol)
+Chem.MolToMolFile(mol, "ligand_prepared.mol")
+</code></pre>
+  </section>
+
+  <!-- 4. Structural Analysis & Binding Pocket Characterization -->
+  <section class="section" id="analysis-pocket">
+    <h2>4. Structural Analysis & Binding Pocket Characterization</h2>
+    <p>
+      Before docking, let’s <strong>examine the protein-ligand interface</strong> 
+      and characterize key residues in the binding site.
+    </p>
+    <p class="placeholder">
+      [Insert images/screenshots of the binding pocket from PyMOL/ChimeraX, 
+      highlighting crucial residues, H-bond donors/acceptors, hydrophobic interactions, etc.]
+    </p>
+    <pre><code class="placeholder">
+# Optional example code using PyMOL API for selection:
+# cmd.select("binding_site", "resi 100-120")
+</code></pre>
+  </section>
+
+  <!-- 5. Basic Docking Protocol -->
+  <section class="section" id="basic-docking">
+    <h2>5. Basic Docking Protocol (AutoDock Vina)</h2>
+    <p>
+      Here we will perform a <strong>test docking</strong> with the known approved drug 
+      to validate our setup. Then we'll compare the predicted pose to the experimental data.
+    </p>
+    <ol>
+      <li><strong>Convert your protein to PDBQT format:</strong> 
+        <span class="placeholder">[Use MGLTools or command line scripts]</span></li>
+      <li><strong>Define search box/grid:</strong> 
+        <span class="placeholder">[Coordinates, size, etc. based on known binding site]</span></li>
+      <li><strong>Run Vina docking:</strong></li>
+    </ol>
+    <pre><code>
+# Example Vina command
+vina --receptor protein_prepared.pdbqt \
+     --ligand ligand_prepared.pdbqt \
+     --center_x 10.0 --center_y 15.0 --center_z 5.0 \
+     --size_x 20 --size_y 20 --size_z 20 \
+     --out ligand_docked.pdbqt \
+     --log docking_log.txt
+</code></pre>
+    <p>
+      <em>Analysis Tip:</em> Superimpose the <strong>docked pose</strong> onto the 
+      <strong>experimental</strong> co-crystal structure (if available) to assess 
+      how well the docking recapitulates the known pose.
+    </p>
+  </section>
+
+  <!-- 6. Mini Virtual Screening (Optional) -->
+  <section class="section" id="mini-screening">
+    <h2>6. Mini Virtual Screening (Optional)</h2>
+    <p>
+      Showcase how to screen a <strong>small library of compounds</strong> for 
+      potential hits using the same docking workflow.
+    </p>
+    <pre><code class="placeholder">
+# Pseudocode for batch docking multiple ligands
+for each ligand in "library_folder":
+    run vina with appropriate parameters
+    parse results, store docking scores
+</code></pre>
+    <p class="placeholder">
+      [Add a short table or snippet showing top-ranked hits, their docking scores, etc.]
+    </p>
+  </section>
+
+  <!-- 7. Simple Machine Learning for Activity Prediction -->
+  <section class="section" id="ml-activity">
+    <h2>7. Simple Machine Learning for Activity Prediction</h2>
+    <p>
+      Integrate a basic ML approach (e.g., a random forest) to classify 
+      active vs. inactive compounds if you have a suitable dataset.
+    </p>
+    <pre><code class="placeholder">
+# Example: Using RDKit to generate Morgan fingerprints
+from rdkit import Chem
+from rdkit.Chem import AllChem
+import numpy as np
+
+# Suppose we have a list of (smiles, activity) pairs
+data = [("CCOC(=O)...", 1), ("C1CCN...", 0), ...]
+
+X = []
+y = []
+for (smi, label) in data:
+    mol = Chem.MolFromSmiles(smi)
+    fp = AllChem.GetMorganFingerprintAsBitVect(mol, radius=2, nBits=1024)
+    arr = np.zeros((1,), dtype=int)
+    fp.ConvertToNumpyArray(arr, 0)
+    X.append(arr)
+    y.append(label)
+
+# Train a random forest
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(n_estimators=100)
+clf.fit(X, y)
+
+# Evaluate
+print("Model accuracy:", clf.score(X, y))
+</code></pre>
+    <p class="placeholder">
+      [Discuss how to do a train/test split, cross-validation, or other best practices for reproducible ML workflows]
+    </p>
+  </section>
+
+  <!-- 8. Outline of Molecular Dynamics Setup -->
+  <section class="section" id="md-setup">
+    <h2>8. (Optional) Outline: Setting Up Molecular Dynamics</h2>
+    <p>
+      We won’t run MD in this tutorial, but let’s outline the key steps if you 
+      wanted to <strong>simulate the protein-ligand complex</strong> with GROMACS or OpenMM.
+    </p>
+    <ol>
+      <li><strong>Prepare topology files:</strong> 
+        <span class="placeholder">[Protein force field, ligand parameter generation]</span></li>
+      <li><strong>Define the simulation box & solvate:</strong> 
+        <span class="placeholder">[Add water, ions, neutralize system]</span></li>
+      <li><strong>Energy minimization & equilibration:</strong> 
+        <span class="placeholder">[Run short NVT/NPT simulations]</span></li>
+      <li><strong>Production MD:</strong> 
+        <span class="placeholder">[Longer run to sample protein-ligand dynamics]</span></li>
+    </ol>
+    <p>
+      <strong>Computational Note:</strong> MD can be resource-intensive. For 
+      advanced analyses (free energy calculations, long-timescale simulations), 
+      consider HPC clusters or cloud GPU solutions.
+    </p>
+  </section>
+
+  <!-- 9. Wrap-Up & Next Steps -->
+  <section class="section" id="wrap-up">
+    <h2>9. Wrap-Up & Next Steps</h2>
+    <p>
+      In this tutorial, we covered:
+    </p>
+    <ul>
+      <li>Basic environment setup and protein/ligand preparation.</li>
+      <li>Performing a test docking with an approved drug.</li>
+      <li>(Optionally) screening a small compound library.</li>
+      <li>Introduction to machine learning for activity prediction.</li>
+      <li>Outline of MD setup (without actually running simulations).</li>
+    </ul>
+    <p>
+      <strong>Where to go from here?</strong> 
+      <span class="placeholder">
+        [Mention deeper topics: advanced scoring, free energy calculations, 
+        AI-driven de novo design, or multi-omics target discovery...]
+      </span>
+    </p>
+  </section>
+
+    <!-- Back Button -->
+    <a href="../index.html" class="back-link">← Back to Blog</a>
+
+
+  <footer>
+    <hr />
+    <p>&copy; 2025 Joe Wallace. 
+      <br />
+      <em>Contact: joewallace2995@gmail.com</em>
+    </p>
+  </footer>
+
+</body>
+</html>
